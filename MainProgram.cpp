@@ -141,7 +141,9 @@ public:
 
     // TODO 6d: return data_[index]; throw std::out_of_range if invalid
     T at(int index) const {
-        return T(); // <-- replace
+        if (index < 0 || index >=N)
+        throw std::out_of_range("FixedArray index out of range");
+        return data_[index];// <-- replace
     }
 };
 
